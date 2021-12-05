@@ -27,5 +27,7 @@ router.register('due_task', views.DueTaskViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('register/', views.CreateUserView.as_view(), name='user'),
+    path('api_auth/', include('rest_framework.urls'))
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
